@@ -1,0 +1,107 @@
+@host = http://localhost:5283
+@token = YOUR_JWT_TOKEN_HERE
+@locationId = 00000000-0000-0000-0000-000000000000
+@rootId = 00000000-0000-0000-0000-000000000000
+@childId = 00000000-0000-0000-0000-000000000000
+@pageNumber = 1
+@pageSize = 10
+
+### Location - Get by Id
+GET {{host}}/api/v1/Location/{{locationId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Location - Get Paging
+GET {{host}}/api/v1/Location/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Location - Create
+POST {{host}}/api/v1/Location
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "address": "123 Main St",
+  "phoneNumber": "+1-555-1234",
+  "roomCount": 5,
+  "isActive": true,
+  "locationTypeId": "00000000-0000-0000-0000-000000000000",
+  "isReservationActive": true
+}
+
+###
+
+### Location - Update
+PUT {{host}}/api/v1/Location
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "{{locationId}}",
+  "address": "123 Main St - Updated",
+  "phoneNumber": "+1-555-5678",
+  "roomCount": 6,
+  "isActive": true,
+  "locationTypeId": "00000000-0000-0000-0000-000000000000",
+  "isReservationActive": false
+}
+
+###
+
+### Location - Delete
+DELETE {{host}}/api/v1/Location/{{locationId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Location View - All
+GET {{host}}/api/v1/Location/View/All
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Location View - Paging
+GET {{host}}/api/v1/Location/View/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Location View - By Id
+GET {{host}}/api/v1/Location/View/{{locationId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Location Recursive - All from Root
+GET {{host}}/api/v1/Location/Recursive/All/{{rootId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Location Recursive - Paging from Root
+GET {{host}}/api/v1/Location/Recursive/Paging/{{rootId}}/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Location Recursive - Get Child By Id
+GET {{host}}/api/v1/Location/Recursive/{{rootId}}/{{childId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+

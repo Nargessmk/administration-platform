@@ -1,0 +1,65 @@
+@host = http://localhost:5283
+@token = YOUR_JWT_TOKEN_HERE
+@foodId = 00000000-0000-0000-0000-000000000000
+@mealId = 00000000-0000-0000-0000-000000000000
+@pageNumber = 1
+@pageSize = 10
+
+### Food - Get by Id
+GET {{host}}/api/v1/Food/{{foodId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Food - Get Paging
+GET {{host}}/api/v1/Food/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Food - Create
+POST {{host}}/api/v1/Food
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{}
+
+###
+
+### Food - Update
+PUT {{host}}/api/v1/Food
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "{{foodId}}"
+}
+
+###
+
+### Food - Delete
+DELETE {{host}}/api/v1/Food/{{foodId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Food View - Get by MealId
+GET {{host}}/api/v1/Food/View/Meal/{{mealId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Food View - Get by MealId Paging
+GET {{host}}/api/v1/Food/View/Meal/{{mealId}}/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+

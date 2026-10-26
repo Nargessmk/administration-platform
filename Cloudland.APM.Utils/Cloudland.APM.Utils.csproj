@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="Microsoft.Data.SqlClient">
+            <HintPath>..\..\..\..\..\.nuget\packages\microsoft.data.sqlclient\5.1.6\ref\net6.0\Microsoft.Data.SqlClient.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Dapper" Version="2.1.66"/>
+        <PackageReference Include="FusionAuth.Client" Version="1.58.2" />
+        <PackageReference Include="Irony" Version="1.5.3"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.7" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.7" />
+        <PackageReference Include="Microsoft.SqlServer.TransactSql.ScriptDom" Version="170.64.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="DQL\Models\"/>
+    </ItemGroup>
+
+</Project>

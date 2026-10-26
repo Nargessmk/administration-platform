@@ -1,0 +1,50 @@
+### Reindex API Test File
+### Base URL: http://localhost:7004
+
+### Get available views
+GET {{baseUrl}}/api/reindex/views
+Authorization: Bearer {{token}}
+
+### Reindex Personnel view
+POST {{baseUrl}}/api/reindex/view/Personnel
+Authorization: Bearer {{token}}
+
+### Reindex Vehicle view
+POST {{baseUrl}}/api/reindex/view/Vehicle
+Authorization: Bearer {{token}}
+
+### Reindex Location view
+POST {{baseUrl}}/api/reindex/view/Location
+Authorization: Bearer {{token}}
+
+### Reindex Food view
+POST {{baseUrl}}/api/reindex/view/Food
+Authorization: Bearer {{token}}
+
+### Reindex Meal view
+POST {{baseUrl}}/api/reindex/view/Meal
+Authorization: Bearer {{token}}
+
+### Reindex Contractor view
+POST {{baseUrl}}/api/reindex/view/Contractor
+Authorization: Bearer {{token}}
+
+### Reindex OrganizationalChart view
+POST {{baseUrl}}/api/reindex/view/OrganizationalChart
+Authorization: Bearer {{token}}
+
+### Reindex OrganizationalPosition view
+POST {{baseUrl}}/api/reindex/view/OrganizationalPosition
+Authorization: Bearer {{token}}
+
+### Reindex all views
+POST {{baseUrl}}/api/reindex/all
+Authorization: Bearer {{token}}
+
+### Get reindex status
+GET {{baseUrl}}/api/reindex/status
+Authorization: Bearer {{token}}
+
+### Variables
+@baseUrl = http://localhost:7004
+@token = your-jwt-token-here

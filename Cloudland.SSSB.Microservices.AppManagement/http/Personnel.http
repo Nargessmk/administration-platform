@@ -1,0 +1,171 @@
+@host = http://localhost:5283
+@token = YOUR_JWT_TOKEN_HERE
+@personnelId = 00000000-0000-0000-0000-000000000000
+@organizationalPositionId = 00000000-0000-0000-0000-000000000000
+@organizationalChartId = 00000000-0000-0000-0000-000000000000
+@rootId = 00000000-0000-0000-0000-000000000000
+@childId = 00000000-0000-0000-0000-000000000000
+@pageNumber = 1
+@pageSize = 10
+
+### Personnel - Get by Id
+GET {{host}}/api/v1/Personnel/{{personnelId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Personnel - Get Paging
+GET {{host}}/api/v1/Personnel/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Personnel - Create
+POST {{host}}/api/v1/Personnel
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "fusionUserId": "00000000-0000-0000-0000-000000000000",
+  "firstName": "John",
+  "lastName": "Doe",
+  "nationalCode": "1234567890",
+  "personnelCode": "P-001",
+  "familyRelationTypeId": "00000000-0000-0000-0000-000000000000",
+  "dateOfBirth": "1990-01-01",
+  "phoneNumber": "+1-555-0000",
+  "mobile1": "+1-555-1111",
+  "mobile2": "+1-555-2222",
+  "hasShift": true,
+  "isDailyWorker": false,
+  "hasFoodReservation": true,
+  "contractTypeId": "00000000-0000-0000-0000-000000000000",
+  "isActive": true,
+  "isRetired": false,
+  "displayName": "John Doe",
+  "address": "Some Address",
+  "organizationalPositionId": "00000000-0000-0000-0000-000000000000",
+  "organizationalChartId": "00000000-0000-0000-0000-000000000000",
+  "signature": null,
+  "walletBalance": 0,
+  "isSupervisor": false
+}
+
+###
+
+### Personnel - Update
+PUT {{host}}/api/v1/Personnel
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "{{personnelId}}",
+  "fusionUserId": "00000000-0000-0000-0000-000000000000",
+  "firstName": "John",
+  "lastName": "Doe",
+  "nationalCode": "1234567890",
+  "personnelCode": "P-001",
+  "familyRelationTypeId": "00000000-0000-0000-0000-000000000000",
+  "dateOfBirth": "1990-01-01",
+  "phoneNumber": "+1-555-0000",
+  "mobile1": "+1-555-1111",
+  "mobile2": "+1-555-2222",
+  "hasShift": true,
+  "isDailyWorker": false,
+  "hasFoodReservation": true,
+  "contractTypeId": "00000000-0000-0000-0000-000000000000",
+  "isActive": true,
+  "isRetired": false,
+  "displayName": "John Doe",
+  "address": "Some Address Updated",
+  "organizationalPositionId": "00000000-0000-0000-0000-000000000000",
+  "organizationalChartId": "00000000-0000-0000-0000-000000000000",
+  "signature": null,
+  "walletBalance": 100,
+  "isSupervisor": true
+}
+
+###
+
+### Personnel - Delete
+DELETE {{host}}/api/v1/Personnel/{{personnelId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Personnel View - All
+GET {{host}}/api/v1/Personnel/View/All
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Personnel View - Paging
+GET {{host}}/api/v1/Personnel/View/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Personnel View - By Id
+GET {{host}}/api/v1/Personnel/View/{{personnelId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Personnel Recursive - All from Root
+GET {{host}}/api/v1/Personnel/Recursive/All/{{rootId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Personnel Recursive - Paging from Root
+GET {{host}}/api/v1/Personnel/Recursive/Paging/{{rootId}}/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Personnel Recursive - Get Child By Id
+GET {{host}}/api/v1/Personnel/Recursive/{{rootId}}/{{childId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Personnel View - Get by OrganizationalPositionId
+GET {{host}}/api/v1/Personnel/View/OrganizationalPosition/{{organizationalPositionId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Personnel View - Get by OrganizationalPositionId Paging
+GET {{host}}/api/v1/Personnel/View/OrganizationalPosition/{{organizationalPositionId}}/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Personnel View - Get by OrganizationalChartId
+GET {{host}}/api/v1/Personnel/View/OrganizationalChart/{{organizationalChartId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Personnel View - Get by OrganizationalChartId Paging
+GET {{host}}/api/v1/Personnel/View/OrganizationalChart/{{organizationalChartId}}/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+

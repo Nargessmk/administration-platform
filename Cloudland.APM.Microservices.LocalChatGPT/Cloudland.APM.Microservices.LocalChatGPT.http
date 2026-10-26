@@ -1,0 +1,6 @@
+@Cloudland.APM.Microservices.LocalChatGPT_HostAddress = http://localhost:5261
+
+GET {{Cloudland.APM.Microservices.LocalChatGPT_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

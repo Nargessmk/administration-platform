@@ -1,0 +1,86 @@
+@host = http://localhost:5283
+@token = YOUR_JWT_TOKEN_HERE
+@accountNumberId = 00000000-0000-0000-0000-000000000000
+@organizationalChartId = 00000000-0000-0000-0000-000000000000
+@pageNumber = 1
+@pageSize = 10
+
+### AccountNumber - Get by Id
+GET {{host}}/api/v1/AccountNumber/{{accountNumberId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### AccountNumber - Get Paging
+GET {{host}}/api/v1/AccountNumber/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### AccountNumber - Create
+POST {{host}}/api/v1/AccountNumber
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{}
+
+###
+
+### AccountNumber - Update
+PUT {{host}}/api/v1/AccountNumber
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "{{accountNumberId}}"
+}
+
+###
+
+### AccountNumber - Delete
+DELETE {{host}}/api/v1/AccountNumber/{{accountNumberId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### AccountNumber View - Get All
+GET {{host}}/api/v1/AccountNumber/view
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### AccountNumber View - Get Paging
+GET {{host}}/api/v1/AccountNumber/view/paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### AccountNumber View - Get by Id
+GET {{host}}/api/v1/AccountNumber/view/{{accountNumberId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### AccountNumber View - Get by OrganizationalChartId
+GET {{host}}/api/v1/AccountNumber/view/OrganizationalChart/{{organizationalChartId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### AccountNumber View - Get by OrganizationalChartId Paging
+GET {{host}}/api/v1/AccountNumber/view/OrganizationalChart/{{organizationalChartId}}/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+

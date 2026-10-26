@@ -1,0 +1,60 @@
+using AutoMapper;
+using Cloudland.SSSB.DTO;
+using Cloudland.SSSB.DTO.ViewDTO;
+using Cloudland.SSSB.Microservices.AppManagement.CQRS.Handlers.Base;
+using Cloudland.SSSB.Microservices.AppManagement.CQRS.Views;
+using Cloudland.SSSB.Microservices.AppManagement.CustomResults;
+using Cloudland.SSSB.Models.View;
+using EntityFrameworkCore.UnitOfWork.Interfaces;
+using MassTransit;
+using MediatR;
+using Microsoft.Extensions.Caching.Distributed;
+using Nest;
+using Raven.Client.Documents.Session;
+
+namespace Cloudland.SSSB.Microservices.AppManagement.CQRS.Handlers.ReservationRequestHeader.View;
+
+public sealed class GetReservationRequestHeaderViewAllPagingQueryHandler(
+    IUnitOfWork unitOfWork,
+    EntityFrameworkCore.Repository.Interfaces.IRepository<Models.ReservationRequestHeader> repository,
+    EntityFrameworkCore.Repository.Interfaces.IRepository<ReservationRequestHeaderView> ReservationRequestHeaderViewRepository,
+    IMapper mapper,
+    IPublishEndpoint publishEndpoint,
+    IElasticClient elasticClient,
+    IDistributedCache distributedCache,
+    IHttpContextAccessor httpContextAccessor,
+    IAsyncDocumentSession dbSession)
+    : BaseHandler<Models.ReservationRequestHeader, Guid>(unitOfWork, repository, mapper, publishEndpoint, elasticClient,
+            distributedCache, httpContextAccessor, dbSession),
+        IRequestHandler<GetReservationRequestHeaderViewAllPagingQuery, ResultDTO<PaginatedResult<ReservationRequestHeaderViewDTO>>>
+{
+    public async Task<ResultDTO<PaginatedResult<ReservationRequestHeaderViewDTO>>> Handle(
+        GetReservationRequestHeaderViewAllPagingQuery request,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            var query = ReservationRequestHeaderViewRepository.MultipleResultQuery()
+                .OrderByDescending(d => d.CreateAt);
+            var entities = await ReservationRequestHeaderViewRepository.SearchAsync(query, cancellationToken);
+            var mappedEntities = entities.Select(x => _mapper.Map<ReservationRequestHeaderViewDTO>(x));
+
+            var paginatedResult = new PaginatedResult<ReservationRequestHeaderViewDTO>(request.PageNumber, request.PageSize);
+            await paginatedResult.PaginateFromEnumerable(mappedEntities);
+
+            return ResultDTO<PaginatedResult<ReservationRequestHeaderViewDTO>>.Success(
+                paginatedResult,
+                "لیست درخواست‌های رزرو با موفقیت دریافت شد"
+            );
+        }
+        catch (Exception ex)
+        {
+            return ResultDTO<PaginatedResult<ReservationRequestHeaderViewDTO>>.Failure(
+                $"خطا در دریافت لیست درخواست‌های رزرو: {ex.Message}",
+                []
+            );
+        }
+    }
+}
+
+

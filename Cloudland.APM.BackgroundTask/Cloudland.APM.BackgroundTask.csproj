@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>dotnet-Cloudland.APM.BackgroundTask-7e93fae6-16ad-4301-9311-62fa3b4f8484</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="9.0.0"/>
+        <PackageReference Include="AutoMapper" Version="15.0.1" />
+        <PackageReference Include="Elastic.Clients.Elasticsearch" Version="9.0.7"/>
+        <PackageReference Include="EntityFrameworkCore.Data.Repository" Version="9.0.0"/>
+        <PackageReference Include="EntityFrameworkCore.Data.UnitOfWork" Version="9.0.0"/>
+        <PackageReference Include="Sentry.AspNetCore" Version="4.3.0"/>
+        <PackageReference Include="Hangfire" Version="1.8.20"/>
+        <PackageReference Include="Hangfire.Console" Version="1.4.3"/>
+        <PackageReference Include="Hangfire.SqlServer" Version="1.8.20"/>
+        <PackageReference Include="MassTransit" Version="8.5.1" />
+        <PackageReference Include="MassTransit.RabbitMQ" Version="8.5.1" />
+        <PackageReference Include="MediatR" Version="13.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.7" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="9.0.7" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.7" />
+        <PackageReference Include="Microsoft.Extensions.ApiDescription.Server" Version="9.0.7">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="9.0.7" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.7" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+        <PackageReference Include="RavenDB.DependencyInjection" Version="5.0.1"/>
+        <PackageReference Include="Scalar.AspNetCore" Version="2.6.4" />
+        <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+        <PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.1" />
+        <PackageReference Include="Serilog.Sinks.Elasticsearch" Version="10.0.0" />
+        <PackageReference Include="StackExchange.Redis" Version="2.8.58" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="..\.dockerignore">
+            <Link>.dockerignore</Link>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Cloudland.APM.DataBaseContext\Cloudland.APM.DataBaseContext.csproj" />
+        <ProjectReference Include="..\Cloudland.APM.DTO\Cloudland.APM.DTO.csproj" />
+        <ProjectReference Include="..\Cloudland.APM.Mapper.Profiles\Cloudland.APM.Mapper.Profiles.csproj" />
+        <ProjectReference Include="..\Cloudland.APM.Models\Cloudland.APM.Models.csproj" />
+        <ProjectReference Include="..\Cloudland.SSSB.DataBaseContext\Cloudland.SSSB.DataBaseContext.csproj" />
+        <ProjectReference Include="..\Cloudland.SSSB.Models\Cloudland.SSSB.Models.csproj" />
+    </ItemGroup>
+</Project>

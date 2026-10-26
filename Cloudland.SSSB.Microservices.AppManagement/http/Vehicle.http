@@ -1,0 +1,108 @@
+@host = http://localhost:5283
+@token = YOUR_JWT_TOKEN_HERE
+@vehicleId = 00000000-0000-0000-0000-000000000000
+@departmentId = 00000000-0000-0000-0000-000000000000
+@vehicleTypeId = 00000000-0000-0000-0000-000000000000
+@pageNumber = 1
+@pageSize = 10
+
+### Vehicle - Get by Id
+GET {{host}}/api/v1/Vehicle/{{vehicleId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Vehicle - Get Paging
+GET {{host}}/api/v1/Vehicle/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Vehicle - Department vehicles
+GET {{host}}/api/v1/Vehicle/Department/{{departmentId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Vehicle - Vehicle type vehicles
+GET {{host}}/api/v1/Vehicle/VehicleType/{{vehicleTypeId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Vehicle - Create
+POST {{host}}/api/v1/Vehicle
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{}
+
+###
+
+### Vehicle - Update
+PUT {{host}}/api/v1/Vehicle
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "{{vehicleId}}"
+}
+
+###
+
+### Vehicle - Delete
+DELETE {{host}}/api/v1/Vehicle/{{vehicleId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+
+### Vehicle View - All
+GET {{host}}/api/v1/Vehicle/View/All
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Vehicle View - Paging
+GET {{host}}/api/v1/Vehicle/View/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Vehicle View - By Id
+GET {{host}}/api/v1/Vehicle/View/{{VehicleId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Vehicle Recursive - All from Root
+GET {{host}}/api/v1/Vehicle/Recursive/All/{{rootId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Vehicle Recursive - Paging from Root
+GET {{host}}/api/v1/Vehicle/Recursive/Paging/{{rootId}}/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Vehicle Recursive - Get Child By Id
+GET {{host}}/api/v1/Vehicle/Recursive/{{rootId}}/{{childId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+

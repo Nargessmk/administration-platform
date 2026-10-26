@@ -1,0 +1,100 @@
+@host = http://localhost:5283
+@token = YOUR_JWT_TOKEN_HERE
+@bedId = 00000000-0000-0000-0000-000000000000
+@roomId = 00000000-0000-0000-0000-000000000000
+@pageNumber = 1
+@pageSize = 10
+
+### Bed - Get by Id
+GET {{host}}/api/v1/Bed/{{bedId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Bed - Get Paging
+GET {{host}}/api/v1/Bed/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Bed - Create
+POST {{host}}/api/v1/Bed
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{}
+
+###
+
+### Bed - Update
+PUT {{host}}/api/v1/Bed
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "{{bedId}}"
+}
+
+###
+
+### Bed - Delete
+DELETE {{host}}/api/v1/Bed/{{bedId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Bed - Get by RoomId
+GET {{host}}/api/v1/Bed/Room/{{roomId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Bed - Get by RoomId Paging
+GET {{host}}/api/v1/Bed/Room/{{roomId}}/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Bed View - Get All
+GET {{host}}/api/v1/Bed/view
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Bed View - Get Paging
+GET {{host}}/api/v1/Bed/view/paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Bed View - Get by Id
+GET {{host}}/api/v1/Bed/view/{{bedId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Bed View - Get by RoomId
+GET {{host}}/api/v1/Bed/view/Room/{{roomId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Bed View - Get by RoomId Paging
+GET {{host}}/api/v1/Bed/view/Room/{{roomId}}/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+

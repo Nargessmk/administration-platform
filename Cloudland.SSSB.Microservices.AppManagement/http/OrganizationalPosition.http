@@ -1,0 +1,50 @@
+@host = http://localhost:5283
+@token = YOUR_JWT_TOKEN_HERE
+@organizationalPositionId = 00000000-0000-0000-0000-000000000000
+@pageNumber = 1
+@pageSize = 10
+
+### OrganizationalPosition - Get by Id
+GET {{host}}/api/v1/OrganizationalPosition/{{organizationalPositionId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### OrganizationalPosition - Get Paging
+GET {{host}}/api/v1/OrganizationalPosition/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### OrganizationalPosition - Create
+POST {{host}}/api/v1/OrganizationalPosition
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{}
+
+###
+
+### OrganizationalPosition - Update
+PUT {{host}}/api/v1/OrganizationalPosition
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "{{organizationalPositionId}}"
+}
+
+###
+
+### OrganizationalPosition - Delete
+DELETE {{host}}/api/v1/OrganizationalPosition/{{organizationalPositionId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+

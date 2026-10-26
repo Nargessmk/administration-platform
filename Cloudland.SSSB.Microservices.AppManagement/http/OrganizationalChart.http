@@ -1,0 +1,94 @@
+@host = http://localhost:5283
+@token = YOUR_JWT_TOKEN_HERE
+@organizationalChartId = 00000000-0000-0000-0000-000000000000
+@rootId = 00000000-0000-0000-0000-000000000000
+@childId = 00000000-0000-0000-0000-000000000000
+@pageNumber = 1
+@pageSize = 10
+
+### OrganizationalChart - Get by Id
+GET {{host}}/api/v1/OrganizationalChart/{{organizationalChartId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### OrganizationalChart - Get Paging
+GET {{host}}/api/v1/OrganizationalChart/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### OrganizationalChart - Create
+POST {{host}}/api/v1/OrganizationalChart
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{}
+
+###
+
+### OrganizationalChart - Update
+PUT {{host}}/api/v1/OrganizationalChart
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "{{organizationalChartId}}"
+}
+
+###
+
+### OrganizationalChart - Delete
+DELETE {{host}}/api/v1/OrganizationalChart/{{organizationalChartId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### OrganizationalChart View - All
+GET {{host}}/api/v1/OrganizationalChart/view/all
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### OrganizationalChart View - Paging
+GET {{host}}/api/v1/OrganizationalChart/view/paging?pageNumber={{pageNumber}}&pageSize={{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### OrganizationalChart View - By Id
+GET {{host}}/api/v1/OrganizationalChart/view/{{organizationalChartId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### OrganizationalChart Recursive - All from Root
+GET {{host}}/api/v1/OrganizationalChart/recursive/all/{{rootId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### OrganizationalChart Recursive - Paging from Root
+GET {{host}}/api/v1/OrganizationalChart/recursive/paging/{{rootId}}?pageNumber={{pageNumber}}&pageSize={{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### OrganizationalChart Recursive - Get Child By Id
+GET {{host}}/api/v1/OrganizationalChart/recursive/{{rootId}}/{{childId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+

@@ -1,0 +1,6 @@
+@Cloudland.APM.Microservices.AppManagement_HostAddress = http://localhost:5092
+
+GET {{Cloudland.APM.Microservices.AppManagement_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

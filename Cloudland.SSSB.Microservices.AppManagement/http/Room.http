@@ -1,0 +1,100 @@
+@host = http://localhost:5283
+@token = YOUR_JWT_TOKEN_HERE
+@roomId = 00000000-0000-0000-0000-000000000000
+@locationId = 00000000-0000-0000-0000-000000000000
+@pageNumber = 1
+@pageSize = 10
+
+### Room - Get by Id
+GET {{host}}/api/v1/Room/{{roomId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Room - Get Paging
+GET {{host}}/api/v1/Room/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Room - Create
+POST {{host}}/api/v1/Room
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{}
+
+###
+
+### Room - Update
+PUT {{host}}/api/v1/Room
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "{{roomId}}"
+}
+
+###
+
+### Room - Delete
+DELETE {{host}}/api/v1/Room/{{roomId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Room - Get by LocationId
+GET {{host}}/api/v1/Room/Location/{{locationId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Room - Get by LocationId Paging
+GET {{host}}/api/v1/Room/Location/{{locationId}}/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Room View - Get All
+GET {{host}}/api/v1/Room/view
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Room View - Get Paging
+GET {{host}}/api/v1/Room/view/paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Room View - Get by Id
+GET {{host}}/api/v1/Room/view/{{roomId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Room View - Get by LocationId
+GET {{host}}/api/v1/Room/view/Location/{{locationId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Room View - Get by LocationId Paging
+GET {{host}}/api/v1/Room/view/Location/{{locationId}}/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+

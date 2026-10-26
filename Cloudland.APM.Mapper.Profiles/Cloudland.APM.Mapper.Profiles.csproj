@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="15.0.1" />
+        <PackageReference Include="MD.PersianDateTime.Standard" Version="2.5.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Cloudland.APM.DTO\Cloudland.APM.DTO.csproj" />
+      <ProjectReference Include="..\Cloudland.APM.Models\Cloudland.APM.Models.csproj" />
+      <ProjectReference Include="..\Cloudland.SSSB.DTO\Cloudland.SSSB.DTO.csproj" />
+      <ProjectReference Include="..\Cloudland.SSSB.Models\Cloudland.SSSB.Models.csproj" />
+    </ItemGroup>
+
+</Project>

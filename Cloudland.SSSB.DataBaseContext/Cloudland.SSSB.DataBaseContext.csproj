@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Audit.EntityFramework.Core" Version="30.0.2" />
+        <PackageReference Include="EntityFrameworkCore.SqlServer.HierarchyId" Version="4.0.0"/>
+        <PackageReference Include="MD.PersianDateTime.Standard" Version="2.5.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.0"/>
+        <PackageReference Include="Audit.NET" Version="30.0.2" />
+        <PackageReference Include="Audit.NET.Elasticsearch" Version="30.0.2" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.7" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.7" />
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.7" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="9.0.7" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.7" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Cloudland.APM.Models\Cloudland.APM.Models.csproj" />
+        <ProjectReference Include="..\Cloudland.SSSB.Models\Cloudland.SSSB.Models.csproj" />
+        <ProjectReference Include="..\Cloudland.SSSB.DatabaseConfiguration\Cloudland.SSSB.DatabaseConfiguration.csproj" />
+    </ItemGroup>
+</Project>

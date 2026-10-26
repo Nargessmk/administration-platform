@@ -1,0 +1,86 @@
+@host = http://localhost:5283
+@token = YOUR_JWT_TOKEN_HERE
+@vehicleDriverId = 00000000-0000-0000-0000-000000000000
+@vehicleId = 00000000-0000-0000-0000-000000000000
+@pageNumber = 1
+@pageSize = 10
+
+### VehicleDriver - Get by Id
+GET {{host}}/api/v1/VehicleDriver/{{vehicleDriverId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### VehicleDriver - Get Paging
+GET {{host}}/api/v1/VehicleDriver/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### VehicleDriver - Create
+POST {{host}}/api/v1/VehicleDriver
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{}
+
+###
+
+### VehicleDriver - Update
+PUT {{host}}/api/v1/VehicleDriver
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "{{vehicleDriverId}}"
+}
+
+###
+
+### VehicleDriver - Delete
+DELETE {{host}}/api/v1/VehicleDriver/{{vehicleDriverId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### VehicleDriver View - Get All
+GET {{host}}/api/v1/VehicleDriver/view
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### VehicleDriver View - Get Paging
+GET {{host}}/api/v1/VehicleDriver/view/paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### VehicleDriver View - Get by Id
+GET {{host}}/api/v1/VehicleDriver/view/{{vehicleDriverId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### VehicleDriver View - Get by VehicleId
+GET {{host}}/api/v1/VehicleDriver/view/Vehicle/{{vehicleId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### VehicleDriver View - Get by VehicleId Paging
+GET {{host}}/api/v1/VehicleDriver/view/Vehicle/{{vehicleId}}/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+

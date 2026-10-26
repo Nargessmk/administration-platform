@@ -1,0 +1,50 @@
+@host = http://localhost:5283
+@token = YOUR_JWT_TOKEN_HERE
+@contractorId = 00000000-0000-0000-0000-000000000000
+@pageNumber = 1
+@pageSize = 10
+
+### Contractor - Get by Id
+GET {{host}}/api/v1/Contractor/{{contractorId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Contractor - Get Paging
+GET {{host}}/api/v1/Contractor/Paging/{{pageNumber}}/{{pageSize}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+### Contractor - Create
+POST {{host}}/api/v1/Contractor
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{}
+
+###
+
+### Contractor - Update
+PUT {{host}}/api/v1/Contractor
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": "{{contractorId}}"
+}
+
+###
+
+### Contractor - Delete
+DELETE {{host}}/api/v1/Contractor/{{contractorId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+
